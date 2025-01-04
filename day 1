@@ -1,0 +1,31 @@
+Today, I have learnt about the Tinymce, which is used as a library plugins for writing HTML type editor in webapplication's admin panel.
+  In my case, I was searching how can I edit django textField in admin panel, and I got to know about tinymce.
+  how can one install on django:
+  
+  1. pip install django-tinymce
+
+  2. Add tinymce to INSTALLED_APPS in settings.py for your project:
+
+INSTALLED_APPS = (
+    ...
+    'tinymce',
+    ...
+)
+  
+ 3. Add tinymce.urls to urls.py for your project:
+
+urlpatterns = patterns('',
+    ...
+    path('tinymce/', include('tinymce.urls')),
+    ...
+)
+  4. In models.py
+
+  from tinymce.models import HTMLField
+
+  description = HTMLField()
+
+  5. In template file eg. actor.html
+    {{ actor.description|safe }}
+And Voila, we can have the editor inside our admin panel for description instead of using just textField.
+  

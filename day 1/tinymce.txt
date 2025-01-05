@@ -28,4 +28,4 @@ urlpatterns = patterns('',
   5. In template file eg. actor.html
     {{ actor.description|safe }}
 And Voila, we can have the editor inside our admin panel for description instead of using just textField.
-  
+  https://tiny.cloud
